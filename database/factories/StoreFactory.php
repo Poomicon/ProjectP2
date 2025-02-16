@@ -20,6 +20,7 @@ class StoreFactory extends Factory
             'OpenDate' => $this->faker->date(), // Changed from 'openDate' to 'OpenDate'
             'Stock' => $this->faker->numberBetween(10, 100), // Changed from 'stock' to 'Stock'
             'StoreStatus' => $this->faker->randomElement(['Open', 'Closed']), // Changed from 'storeStatus' to 'StoreStatus'
+            'Picture' => $this->faker->imageUrl(), // Changed from 'picture' to 'Picture'
         ];
     }
 }
