@@ -10,8 +10,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        // Fetch all products
-        $products = Product::all();
+        // Fetch all products with related store data
+        $products = Product::with('store')->get();
 
         // Send data to the Homepage/index view
         return Inertia::render('Homepage/index', [
@@ -21,7 +21,8 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        // Fetch the product with related store data
+        $product = Product::with('store')->findOrFail($id);
         return Inertia::render('Homepage/ProductDetail', ['product' => $product]);
     }
 }

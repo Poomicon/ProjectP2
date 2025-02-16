@@ -30,9 +30,10 @@ const ProductDetail = ({ product }) => {
                     <h3 className="text-lg font-semibold text-gray-900">{product.ProductName}</h3>
                     <p className="text-xl font-bold text-green-600">฿{price}</p>
                     <p className="text-gray-600">Stock: {product.Stock}</p>
-                    <p className="text-gray-600">Category: {product.CategoryName}</p>
+                    <p className="text-gray-600">Category: {product.ProductType}</p>
                     <p className="text-gray-600">Status: {product.ProductStatus}</p>
                     <p className="text-gray-600">{product.ProductDescription}</p>
+
                     <button
                         onClick={addToCart}
                         className="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors duration-200"
@@ -46,6 +47,7 @@ const ProductDetail = ({ product }) => {
                         กลับสู่หน้าหลัก
                     </Link>
                 </div>
+                <p className="text-gray-600">ร้านค้า: {product.store.StoreName}</p>
             </div>
             <div className="mt-6">
                 <div className="flex space-x-4">
