@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
 
 Route::get('/homepage', [ProductController::class, 'index'])->name('homepage.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
