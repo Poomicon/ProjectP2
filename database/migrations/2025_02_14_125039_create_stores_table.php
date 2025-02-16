@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->date('OpenDate');
             $table->integer('Stock');
             $table->string('StoreStatus');
+            $table->string('Picture');
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null'); // แก้ไขที่นี่
             $table->timestamps();
         });
