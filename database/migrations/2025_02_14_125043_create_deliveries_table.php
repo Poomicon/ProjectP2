@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('DeliveryStatus')->default('pending');
             $table->timestamp('DeliveryDate')->nullable();
             $table->text('Address');
+            $table->string('Picture')->nullable();
             $table->timestamps();
         });
     }

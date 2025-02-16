@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@inertiajs/inertia-react';
 
 const Homepage = ({ products }) => {
   console.log(products); // Log the products data for debugging
@@ -22,12 +23,12 @@ const Homepage = ({ products }) => {
               <p className="text-gray-600">
                 ฿{typeof product.Price === 'number' ? product.Price.toFixed(2) : product.Price}
               </p>
-              <a
-                href="#"
+              <Link
+                href={`/products/${product.id}`}
                 className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-200"
               >
                 ดูรายละเอียด
-              </a>
+              </Link>
             </div>
           </div>
         ))}

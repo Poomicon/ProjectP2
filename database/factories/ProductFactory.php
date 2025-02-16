@@ -13,13 +13,15 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'id_stores' => Store::factory(), // Changed from 'id_store' to 'id_stores'
-            'ProductName' => $this->faker->word, // Changed from 'productName' to 'ProductName'
-            'Price' => $this->faker->randomFloat(2, 10, 500), // Changed from 'price' to 'Price'
-            'Stock' => $this->faker->numberBetween(10, 100), // Added 'Stock' field
-            'CreatedAt' => $this->faker->dateTimeThisYear(), // Changed from 'createdAt' to 'CreatedAt'
-            'ProductType' => $this->faker->word, // Changed from 'productType' to 'ProductType'
-            'ProductStatus' => $this->faker->randomElement(['Available', 'Out of stock']), // Changed from 'productStatus' to 'ProductStatus'
+            'id_stores' => Store::factory(),
+            'ProductName' => $this->faker->word,
+            'Price' => $this->faker->randomFloat(2, 10, 1000),
+            'Stock' => $this->faker->numberBetween(1, 100),
+            'CreatedAt' => $this->faker->dateTimeThisYear(),
+            'ProductType' => $this->faker->word,
+            'ProductStatus' => 'available',
+            'ProductImage' => $this->faker->imageUrl(),
+            'ProductDescription' => $this->faker->paragraph,
         ];
     }
 }
