@@ -21,6 +21,7 @@ class DeliveryFactory extends Factory
             'DeliveryStatus' => $this->faker->randomElement(['Shipped', 'In Transit', 'Delivered']),
             'DeliveryDate' => $this->faker->dateTimeThisYear(),
             'Address' => $this->faker->address,
+            'Picture' => $this->faker->imageUrl(),
         ];
     }
 }
