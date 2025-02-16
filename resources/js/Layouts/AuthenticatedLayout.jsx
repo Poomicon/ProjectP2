@@ -31,16 +31,10 @@ export default function AuthenticatedLayout({ header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    href={route("chirps.index")}
-                                    active={route().current("chirps.index")}
+                                    href={route("homepage.index")}
+                                    active={route().current("homepage.index")}
                                 >
-                                    Chirps
-                                </NavLink>
-                                <NavLink
-                                    href={route("products.index")}
-                                    active={route().current("products.index")}
-                                >
-                                    Products
+                                    Homepage
                                 </NavLink>
                             </div>
                         </div>
@@ -147,16 +141,10 @@ export default function AuthenticatedLayout({ header, children }) {
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            href={route("chirps.index")}
-                            active={route().current("chirps.index")}
+                            href={route("homepage.index")}
+                            active={route().current("homepage.index")}
                         >
-                            Chirps
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href={route("products.index")}
-                            active={route().current("products.index")}
-                        >
-                            Products
+                            homepage
                         </ResponsiveNavLink>
                     </div>
 

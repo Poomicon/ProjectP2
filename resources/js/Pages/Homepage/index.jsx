@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 const Homepage = ({ products }) => {
   console.log(products); // Log the products data for debugging

@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link } from '@inertiajs/inertia-react';
+import { Link, useForm } from '@inertiajs/inertia-react';
 
 const ProductDetail = ({ product }) => {
     console.log(product); // Log the product data for debugging
 
     const price = typeof product.Price === 'number' ? product.Price.toFixed(2) : parseFloat(product.Price).toFixed(2);
+
+    const { post } = useForm();
+
+    const addToCart = () => {
+        post('/cart', {
+            product_id: product.id,
+            quantity: 1
+        });
+    };
 
     return (
         <div className="container mx-auto p-4">
@@ -24,6 +33,12 @@ const ProductDetail = ({ product }) => {
                     <p className="text-gray-600">Category: {product.CategoryName}</p>
                     <p className="text-gray-600">Status: {product.ProductStatus}</p>
                     <p className="text-gray-600">{product.ProductDescription}</p>
+                    <button
+                        onClick={addToCart}
+                        className="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors duration-200"
+                    >
+                        เพิ่มลงในตะกร้า
+                    </button>
                     <Link
                         href="/homepage"
                         className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200"
