@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('OrderStatus')->default('pending');
             $table->timestamp('OrderDate')->useCurrent();
             $table->decimal('TotalAmount', 10, 2);
-            $table->foreignId('paymentID')->nullable()->constrained('payments')->onDelete('set null'); // Add this line to include paymentID column
+            $table->foreignId('payment_id')->nullable()->constrained('payments')->onDelete('cascade'); // Add this line to include paymentID column
             $table->timestamps();
         });
     }
