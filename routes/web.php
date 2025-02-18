@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +8,9 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/homepage', [ProductController::class, 'index'])->name('homepage.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');Route::get('stores/create', [StoreController::class, 'create'])->name('stores.create');
+Route::get('stores/{id}', [StoreController::class, 'show'])->name('stores.show'); // เปลี่ยน 'stores.Show' เป็น 'stores.show'
+Route::get('stores', [StoreController::class, 'index'])->name('stores.index');
 
 
 Route::get('/', function () {
@@ -28,6 +31,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 
 require __DIR__.'/auth.php';

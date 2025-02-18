@@ -10,13 +10,14 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'id_stores',
         'ProductName',
         'Price',
         'Stock',
-        'CreatedAt',
         'ProductType',
         'ProductStatus',
+        'ProductImage',
+        'ProductDescription',
+        'id_stores',
     ];
 
     public function store()
